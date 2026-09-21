@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-plane rotation="-90 0 0" width="99" height="20" color="gray"></a-plane>
+
+      <a-sphere position="-2 1.5 -3" radius="0.5" color="red"
+        animation="property: position; from: -2 1.5 -3; to: 3 1.5 -5; dur: 1000; dir: alternate; loop: true; easing: easeInQuad;"
+        animation__click="property: scale; to: 0 0 0; dur: 300; startEvents: click;">
+      </a-sphere>
+
+      <a-box position="2 1.5 -3" color="blue"
+        animation="property: position; from: 5 1.5 -3; to: 0 1.5 -6; dur: 3000; dir: alternate; loop: true; easing: linear;"
+        animation 2="property: scale; to: 0 0 0; dur: 300; startEvents: click;">
+      </a-box>
+
+      <a-cylinder position="-5 1.5 -5" radius="0.3" height="1" color="green"
+        animation="property: position; from: 0 5 -7; to: -5 1.5 -5; dur: 2000; dir: alternate; loop: true; easing: easeInOutElastic;"
+        animation 2="property: scale; to: 0 0 0; dur: 300; startEvents: click;">
+      </a-cylinder>
+      
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+
+    </a-scene>
+  </body>
+</html>
+
