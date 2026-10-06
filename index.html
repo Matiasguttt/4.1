@@ -4,7 +4,26 @@
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
   </head>
   <body>
+    <a-assets>
+      <audio id="fart" src="https://codehs.com/uploads/7ddb9d2fbbb131ebf7e535f38a4f237e" preload="auto"></audio>
+ </a-assets>
     <a-scene>
+        
+        <script>
+      document.addEventListener('DOMContentLoaded', () => {
+      const scene = document.querySelector('a-scene');
+      const music = document.querySelector('#music');
+
+      const startMusic = () => {
+      music.components.sound.playSound();
+    };
+
+    // Fires once on the first user interaction
+    scene.addEventListener('mousemove', startMusic, { once: true });
+    window.addEventListener('touchstart', startMusic, { once: true });
+  });
+</script>
+
 
       <a-plane rotation="-90 0 0" width="99" height="20" color="gray"></a-plane>
 
@@ -14,6 +33,8 @@
       </a-sphere>
 
       <a-box position="2 1.5 -3" color="blue"
+        sound="src: #soundEffect1 on: click"
+
         animation="property: position; from: 5 1.5 -3; to: 0 1.5 -6; dur: 3000; dir: alternate; loop: true; easing: linear;"
         animation 2="property: scale; to: 0 0 0; dur: 300; startEvents: click;">
       </a-box>
@@ -23,11 +44,19 @@
         animation 2="property: scale; to: 0 0 0; dur: 300; startEvents: click;">
       </a-cylinder>
       
+      <a-box position="5 5 5" color="#4CC3D9" sound="src: https://codehs.com/uploads/7ddb9d2fbbb131ebf7e535f38a4f237e; on: click">
+
+<a-entity id="music" sound'src: #bgm loop: true; volume: 0.4;"></a-entity>
+      
       <a-camera>
         <a-cursor></a-cursor>
       </a-camera>
+      
+      <a-assets>
+      <audio id="GG" src="https://codehs.com/uploads/c4d4756d1b13ad10481a2ab02d6e138c" preload="auto"></audio>
+ </a-assets>
+
 
     </a-scene>
   </body>
 </html>
-
